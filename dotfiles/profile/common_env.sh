@@ -12,7 +12,9 @@ if test -f "$DOTFILES/config.sh"; then
     source $DOTFILES/config.sh
 fi
 
-source /dev/stdin < <(brew shellenv)
+if command -v brew &> /dev/null; then
+    source /dev/stdin < <(brew shellenv)
+fi
 
 for rcfile in $DOTFILES/*/env.sh; do
 	source $rcfile

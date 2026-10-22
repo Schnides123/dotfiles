@@ -32,7 +32,7 @@ else
     exit 1
 fi
 
-if ! command -v zsh &> /dev/null
+if [ "$(uname -s)" == "Darwin" ] && ! command -v zsh &> /dev/null
 then
     echo "zsh could not be found"
     echo "installing zsh"

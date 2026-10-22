@@ -1,6 +1,12 @@
 test $interactive = 1 || return
 
-alias lx='exa --icons --color-scale --color=always --git --group-directories-first'
+if command -v eza &> /dev/null; then
+    exa_bin=eza
+else
+    exa_bin=exa
+fi
+
+alias lx="$exa_bin --icons --color-scale --color=always --git --group-directories-first"
 
 
 alias l='lx -l'

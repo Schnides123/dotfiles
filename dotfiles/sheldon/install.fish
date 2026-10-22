@@ -1,5 +1,6 @@
 #!/usr/bin/env fish
 
-if not type -q sheldon
+# sheldon only manages zsh plugins
+if type -q zsh; and not type -q sheldon
     cargo install sheldon --locked
 end

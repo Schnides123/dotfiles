@@ -1,5 +1,10 @@
 #!/usr/bin/env fish
 
+# NixOS provides language toolchains from the system configuration
+if test -e /etc/NIXOS
+    return 0
+end
+
 source $DOTFILES_DATA/asdf/dot_asdf/asdf.fish
     or abort "failed to setup asdf"
 

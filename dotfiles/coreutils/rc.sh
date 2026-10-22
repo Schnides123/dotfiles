@@ -1,6 +1,5 @@
 if ! type "brew" &> /dev/null; then
-  # brew not installed. exit silently
-  echo "brew not found?"
+  # brew not installed (e.g. Linux, which already has GNU tools). exit silently
   return
 fi
 
